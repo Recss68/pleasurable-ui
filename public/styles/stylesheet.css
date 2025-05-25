@@ -97,7 +97,7 @@ h1 {
   }
   p, li {
     font-family: var(--details-font);
-    font-size: clamp(1rem, 1.5vw, 1rem);
+    font-size: clamp(0.9rem, 1.5vw, 1rem);
     color: var(--color-gray);
   }
 
