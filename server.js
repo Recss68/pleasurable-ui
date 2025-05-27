@@ -93,7 +93,7 @@ app.get ('/community-drops/:id', async function (request, response){
   const chatIdResponse = await fetch(`https://fdnd-agency.directus.app/items/dropandheal_messages/?fields=*.*&filter={"exercise":"${chatId}"}&limit=-1`);
   const chatResponseJson = await chatIdResponse.json();
 
-  // const reversedChat = chatResponseJson.data.reverse();
+  const reversedChat = chatResponseJson.data.reverse();
 
   response.render('chat.liquid', {
     chat: chatResponseJson.data,
@@ -115,6 +115,7 @@ app.post('/community-drops/:id', async (request, response) => {
   response.redirect(303, `/community-drops/${chatId}`); 
 });
 
+
 app.post('/community-drops/:exerciseId/delete/:messageId', async (request, response) => {
   const { exerciseId, messageId } = request.params;  
 
@@ -129,6 +130,24 @@ app.post('/community-drops/:exerciseId/delete/:messageId', async (request, respo
     response.status(500).send('Er is iets misgegaan met het verwijderen van het bericht.');
   }
 });
+
+
+// PATCH‐flow: verwerk bewerken van een bericht
+app.post('/community-drops/:exerciseId/edit/:messageId', async (req, res) => {
+  const { exerciseId, messageId } = req.params;
+  const { from, text } = req.body;
+
+  const apiResponse = await fetch(`https://fdnd-agency.directus.app/items/dropandheal_messages/${messageId}`,
+    {
+      method: 'PATCH',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ from, text })
+    }
+  );
+
+  res.redirect(303, `/community-drops/${exerciseId}`);
+});
+
 
 // Stel het poortnummer in waar Express op moet gaan luisteren
 // Lokaal is dit poort 8000; als deze applicatie ergens gehost wordt, waarschijnlijk poort 80

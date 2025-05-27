@@ -28,6 +28,8 @@
             <p>{{ chat.text }}</p>
             
             {% if chat.from == "Mikiyas" %}
+                <button type="button" class="editBtn" data-id="{{chat.id}}" 
+                data-from="{{chat.from}}" data-text="{{chat.text |  escape}}">Bewerken</button>
             <form method="post" action="/community-drops/{{ exerciseId }}/delete/{{ chat.id }}" id="deleteForm">
             <button type="submit" class="deleteBtn">Verwijder Bericht</button>
             </form>

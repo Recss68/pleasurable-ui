@@ -90,6 +90,19 @@ button[type="submit"] {
 }
 
 
+.editBtn {
+    background-color: #d2e9f3be;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 2em;
+    font-size: 0.9rem;
+    cursor: pointer;
+    color: white;
+    height: 2.5em;
+        }
+
+
+
 /* Plaats bericht button */
 .plaatsbericht-btn {
     position: fixed;
