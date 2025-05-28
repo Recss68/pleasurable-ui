@@ -111,93 +111,95 @@ header {
         align-items:center;
       } 
 
-      /*exercise page css*/
+    /*exercise page css*/
   .main-class {
     margin: 0;
     padding: 0;
-   
+  
   }
   
 
-  
 
-  .inline {
+
+.inline {
+  display: flex;
+  align-items: center;
+  gap: 0.2rem;
+  white-space: nowrap;
+  a, h1{
+    text-decoration: none;
+  }
+}
+.exercise-card{
+  display: grid;
+  border-radius: 1rem;
+  gap: 1rem;
+  width: 100%;
+  margin-bottom: 3em;
+  padding: 1rem;
+  ul{
+    border: 2em;
+    list-style: none;
+    
+  } 
+}
+.center-button {
+  display: block; 
+  min-width: 20px;         
+  margin: 0 auto;         
+  text-align: center;       
+}
+
+.custom-progress {
+  width: calc(100% - 1rem); 
+  height: 5px;
+  margin: 0; 
+  border: none;
+}
+
+.custom-progress::-webkit-progress-bar {
+  background-color: var(--black);
+  border-radius: 10px;
+}
+
+.custom-progress::-webkit-progress-value {
+  background-color: var(--white);
+}
+
+/*Fierfox*/
+.custom-progress::-moz-progress-bar {
+  background-color: var(--black);
+}
+
+
+.photo-cont {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+.view-image {
+  width: 100%;
+  max-height: 50vh;       
+  object-fit: cover;       
+}
+
+.close-button {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  color: var(--black);
+  z-index: 10;
+  padding: 1em;
+}
+
+.task-img{
+  min-height: 40vh;
+  margin: auto;
+}
+
+.btn-standard {
     display: flex;
     align-items: center;
-    gap: 0.2rem;
-    white-space: nowrap;
-    a, h1{
-      text-decoration: none;
-    }
-  }
-  .exercise-card{
-    display: grid;
-    border-radius: 1rem;
-    gap: 1rem;
-    width: 100%;
-    margin-bottom: 3em;
-    padding: 1rem;
-    ul{
-      border: 2em;
-      list-style: none;
-      
-    } 
-  }
-  .center-button {
-    display: block; 
-    min-width: 20px;         
-    margin: 0 auto;         
-    text-align: center;       
-  }
-
-  .custom-progress {
-    width: calc(100% - 1rem); 
-    height: 5px;
-    margin: 0; 
-    border: none;
-  }
-  
-  .custom-progress::-webkit-progress-bar {
-    background-color: var(--black);
-    border-radius: 10px;
-  }
-  
-  .custom-progress::-webkit-progress-value {
-    background-color: var(--white);
-  }
-  
-  /*Fierfox*/
-  .custom-progress::-moz-progress-bar {
-    background-color: var(--black);
-  }
-
-
-  .photo-cont {
-    margin: 0;
-    padding: 0;
-    width: 100%;
-  }
-  .view-image {
-    width: 100%;
-    max-height: 50vh;       
-    object-fit: cover;       
-  }
-
-  .close-button {
-    position: absolute;
-    top: 1rem;
-    left: 1rem;
-    color: var(--black);
-    z-index: 10;
-    padding: 1em;
-  }
-  
-  .task-img{
-    min-height: 40vh;
-    margin: auto;
-  }
-
-    .btn-standard {
     min-width: 5vh;
     padding: var(--start-button-padding);
     border-radius: var(--start-button-radius);
@@ -205,5 +207,123 @@ header {
     z-index: 1;
     box-shadow: 0 2px 6px rgba(0,0,0,0.15);
     
+  
+}
+
+  .try {
+    position: relative;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 8px 12px;
+    border-radius: 20px;
+    cursor: pointer;
+    z-index: 100;
+    transition: all 0.2s ease;
+    width: 10em;
+    overflow: hidden;
   }
 
+  .try::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color:#1d1d1d;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 1s ease 0.2s;
+    z-index: 1;
+  }
+
+  .try::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -75%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(
+      120deg,
+      rgba(255, 255, 255, 0.2) 0%,
+      rgba(255, 255, 255, 0.6) 50%,
+      rgba(255, 255, 255, 0.2) 100%
+    );
+    transform: skewX(-20deg);
+    opacity: 0;
+    z-index: 2;
+  }
+
+  .try span {
+    position: relative;
+    z-index: 3;
+  }
+
+  .try.hovered::before {
+    transform: scaleX(1);
+  }
+
+  .try.clicked::after {
+    animation: shine 1s ease forwards;
+    opacity: 1;
+  }
+
+  @keyframes shine {
+    0% {
+      left: -75%;
+      opacity: 0;
+    }
+    30% {
+      opacity: 1;
+    }
+    100% {
+      left: 125%;
+      opacity: 0;
+    }
+  }
+
+  #overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+  }
+
+  #overlayContent {
+    background: #1d1d1d;
+    padding: 2em;
+    border-radius: 1em;
+    text-align: center;
+  }
+
+  .closeFormButton {
+    margin-top: 1em;
+    border: none;
+    border-radius: 1em;
+    padding: 0.5em 1em;
+    cursor: pointer;
+    
+  }
+  .button-row {
+    display: flex;
+    gap: 1rem; /* space between buttons */
+    justify-content: center; /* center horizontally */
+  }
+
+  .button-row a,
+  .button-row button {
+    height: 3em;
+    padding: 0 1.5em;
+    border-radius: 2em;
+    font-size: 1rem;
+    cursor: pointer;
+    white-space: nowrap;
+}

@@ -2,7 +2,7 @@
 <main class="main-class">
   <article class="photo-cont">
   {% for exercise in specificExercise %}
-  
+  <!--cloes button send back to rouwtaak-->
     <a href="/rouwtaak/{{ exercise.task.id }}" class="close-button">        
         <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
         <title>close</title>
@@ -21,7 +21,6 @@
   </article>
   
   <article class="exercise-card">
-    
       {% for exercise in specificExercise %}
         <article>
           <ul class="inline">
@@ -37,7 +36,7 @@
           </ul>
           <progress class="custom-progress" value="10" max="100"></progress>
         </article>
-
+ <!--title and sescription for the exercies-->
         <section >
             <h1>{{ exercise.title }}</h1>
             <p>{{ exercise.description }}</p>
@@ -45,11 +44,30 @@
       {% endfor %}
 
       {% for messageId in specificExercise %}
-          <a class="center-button them-{{ messageId.task.id }} btn-standard" href="/community-drops/{{ messageId.id }}">Start</a>
+        <button id="PlaatsBerichtBtn" class=" them-{{ messageId.task.id }} try"><span>Plaats bericht</span></button>
+<!--navigation layer-->
+        <section id="overlay">
+          <section id="overlayContent">
+            <h2>Let op!</h2>
+            <p>Wil je deelnemen aan die community drop?</p>
+              <article class="button-row ">
+              <button class="closeFormButton" id="closeFormButton">Sluiten</button>
+              <a class=" them-{{ messageId.task.id }} closeFormButton btn-standard" href="/community-drops/{{ messageId.id }}">Start</a>
+              </article>
+          </section>
+        </section>
       {% endfor %}
   </article>
+ 
+
     
 </main>
+
+
+
+
+
+
 {% render 'partials/footer.liquid' %}
 {% render 'partials/foot.liquid' %}
 
