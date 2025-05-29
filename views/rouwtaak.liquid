@@ -2,9 +2,9 @@
 {% include  'partials/header.liquid' %}
 
  <section class="hero">
-    <img class="hero-img" src="/photos/rouwtaak-{{ taskObject.theme }}.svg">
-    <img class="gradient-left" src="/photos/rouwtaak-{{ taskObject.theme }}.svg">
-    <img class="gradient-right" src="/photos/rouwtaak-{{ taskObject.theme }}.svg">
+    <img class="hero-img" src="/photos/rouwtaak-{{ taskObject.theme }}.svg" loading="lazy" alt="rouwtaak{{exercise.id}}-icon">
+    <img class="gradient-left" src="/photos/rouwtaak-{{ taskObject.theme }}.svg" loading="lazy" alt="rouwtaak{{exercise.id}}-icon">
+    <img class="gradient-right" src="/photos/rouwtaak-{{ taskObject.theme }}.svg" loading="lazy" alt="rouwtaak{{exercise.id}}-icon">
     <div class="hero-text">
       <h2>Rouwstappen van de dag</h2>
       <p>1 oefening open vandaag</p>
@@ -16,7 +16,7 @@
   {% for exercise in exerc %}
     <article class="exerc-card"> 
         <figure class="exerc-image-container">
-          <img src="https://fdnd-agency.directus.app/assets/{{ exercise.image }}?width=200&height=200" alt="Task Image" class="exerc-image">
+          <img src="https://fdnd-agency.directus.app/assets/{{ exercise.image }}?width=200&height=200" loading="lazy" alt="Task Image" class="exerc-image">
           <a href="/exercise/{{ exercise.id }}" class="btn them-{{ taskObject.theme }}">Start oefening</a>
         </figure>
 
@@ -28,7 +28,7 @@
 
         <section class="exerc-info">
           <div class="community-drops">
-            <img src="/icons/community-drops-color.svg">
+            <img src="/icons/community-drops-color.svg" loading="lazy" alt="drops-color">
             {% if exercise.messages %}
               <span class="drop-text">{{ exercise.messages | size }} community drops</span>
             {% else %}
