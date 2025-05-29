@@ -51,12 +51,20 @@
 
 .intro-container {
     color: var(--white);
+    .intro-text {
+      position: relative;
+      top: 11%;
+      h1 {
+        font-size: var(--size-extral);
+      }
+    }
 }
 
 .intro-img {
     position: relative;
-    width: 90%;
-    right: 25%;
+    width: 85%;
+    right: 30%;
+    bottom: 8%;
 }
 
 .img-container, .screen-icon {
@@ -69,21 +77,28 @@
 }
 
 .intro-text {
+    padding: 20px;
     height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     gap: 20px;
     h1 {
-        font-size: var(--size-xxl);
+      font-size: var(--size-xl);
+        font-weight: lighter;
         letter-spacing: -1px;
         line-height: 0.8;
         span {
             display: block;
         }
+        @media (min-width: 1028px) {
+          font-size: var(--size-xxl);
+          }
     }
     p {
       color: var(--white);
+      padding-right: 10rem;
+      font-weight: lighter;
     }
 }
 
@@ -142,6 +157,9 @@
     filter: blur(100px);
     top: 80vh;
     right: 10px;
+    @media (min-width: 1028px) {
+      display: none;
+      }
 }
 
 

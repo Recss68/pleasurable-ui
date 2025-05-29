@@ -5,7 +5,7 @@
     <section class="intro-container screen active" id="screen-0">
       <section class="img-container">
         <h2 class="sr-only">Intro Rouwtaak</h2>
-        <img class="intro-img" src="photos/rouwtaak-blue.svg" alt="rouwtaak icoon blauw">
+        <img class="intro-img" src="photos/rouwtaak-blue.svg" loading="lazy" alt="rouwtaak icoon blauw">
       </section>
       <section class="intro-text">
         <h1><span>Drop</span><span>& Heal</span></h1>
@@ -23,8 +23,8 @@
     {% for task in task %}
       <section class="screen" id="screen-{{task.id}}">
 
-        <img class="screen-icon" src="photos/rouwtaak-{{task.theme}}.svg" alt="Rouwtaak {{task.id}}">
-        <img class="screen-gradient" src="photos/rouwtaak-{{task.theme}}.svg" alt="Gradient Rouwtaak {{task.id}}">
+        <img class="screen-icon" src="photos/rouwtaak-{{task.theme}}.svg" loading="lazy" alt="Rouwtaak {{task.id}}">
+        <img class="screen-gradient" src="photos/rouwtaak-{{task.theme}}.svg" loading="lazy" alt="Gradient Rouwtaak {{task.id}}">
 
         <section class="intro-text">
             <h2>Introductie rouwtaken</h2>
