@@ -1,10 +1,4 @@
-# Pleasurable User Interface
-
-Ontwerp en maak met een team voor een opdrachtgever een interface waar gebruikers blij van worden.
-
-De instructie vind je in: [INSTRUCTIONS.md](https://github.com/fdnd-task/pleasurable-ui/blob/main/docs/INSTRUCTIONS.md)
-
-
+# Drop & Heal (Pleasurable UI) 💡
 
 ## Inhoudsopgave
 
@@ -16,20 +10,44 @@ De instructie vind je in: [INSTRUCTIONS.md](https://github.com/fdnd-task/pleasur
   * [Licentie](#licentie)
 
 ## Beschrijving
-<!-- Bij Beschrijving staat kort beschreven wat voor project het is en wat je hebt gemaakt -->
-<!-- Voeg een mooie poster visual toe 📸 -->
-<!-- Voeg een link toe naar Github Pages 🌐-->
+**Drop & Heal** is een ondersteunende website voor mensen die recentelijk een dierbare verloren hebben. Gebruikers worden begeleid door een reeks rouwtaken en reflectie-opdrachten, kunnen hun inzichten delen in een communitypagina en hebben toegang tot een AI-chatbot als digitale steun.  
+🌐 Live website: *[voeg je GitHub Pages of hosting-link hier in]*
+
+---
 
 ## Gebruik
-<!-- Bij Gebruik staat de user story, hoe het werkt en wat je er mee kan. -->
+**User story:**  
+Als gebruiker wil ik een veilige plek hebben om mijn rouwproces te volgen, te reflecteren en me verbonden te voelen met anderen die hetzelfde ervaren.
+
+**Functionaliteit:**
+1. **Taken & Reflectie:**  
+   Je doorloopt verschillende stappen met oefeningen en reflectievragen om je gevoelens te verwerken en je rouwproces beter te begrijpen.
+2. **Communitypagina:**  
+   Je kunt ervaringen lezen van anderen — of zelf berichten delen om steun te vinden en te geven.
+
+---
 
 ## Kenmerken
-<!-- Bij Kenmerken staat welke technieken zijn gebruikt en hoe. Wat is de HTML structuur? Wat zijn de belangrijkste dingen in CSS? Wat is er met JS gedaan en hoe? Misschien heb je iets met NodeJS gedaan, of heb je een framwork of library gebruikt? -->
+- **HTML / Liquid templates:**  
+  Modulaire opbouw met includes voor taken, community-berichten en chat-sectie.
+- **CSS:**  
+  Rustige, toegankelijke styling; loader- en succesmeldingen voor interactie-feedback; responsive design voor mobiel en desktop.
+- **JavaScript:**  
+  - **Form submit controle:** toont een loader tijdens verzenden en een succesmelding na return van server.  
+- **Back-end (Node.js + Express):**  
+  - Behandelt rountes zoals `/tasks`, `/community`, `/chat`, `/favorites`.  
+  - Gebruikt JSON-endpoints (Directus/andere API) voor opslag en ophalen van community posts en gebruikersinvoer.
+- **Authenticatie & state:**  
+  - Je hebt de keuze om alleen te lezen of zelf te posten.  
+  - Gelogde success-state bij plaatsen van berichten of favorieten.
+
+---
 
 ## Installatie
-<!-- Bij Instalatie staat hoe een andere developer aan jouw repo kan werken -->
+Volg deze stappen om lokaal te starten of verder te werken:
 
-## Bronnen
+Bij het clonen of forken van de repo, kan je de server niet gelijk starten en de pagina bekijken, hier zal ik het stap voor stap uitleggen. Aller eerst clone je de repo naar je desktop, open de code in vs code > Navigeer naar het terminal tab en open een nieuwe terminal > Als je ziet dat je in de juiste folder path zit, dan zullen we de node_modules installeren om de express server te laten draaien. Voer hier de command 'npm install' uit ( alle benodigde bestanden worden dan geinstalleerd ) > nu kun je de server starten door de command 'npm start' uit, als het goed is zie nu een tekst zoals 'Application started on https://localhost:800' GEFELICITEERD, nou kun je via dit URL op je browser de website bekijken.
+
 
 ## Licentie
 
