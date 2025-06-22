@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
   try {
     const btn = document.getElementById('PlaatsBerichtBtn');
     const overlay = document.getElementById('overlay');
-    const closeBtn = document.getElementById('close-popup');
+    const closeBtn = document.getElementById('closeFormButton');
 
     if (!btn || !overlay || !closeBtn) {
       console.error("Elementen niet gevonden.");
