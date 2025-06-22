@@ -1,10 +1,13 @@
 document.addEventListener('DOMContentLoaded', () => {
   const toggle = document.querySelector('.menu-toggle');
   const menu = document.querySelector('.menu');
+  const arrowIcon = document.querySelector('.arrow-icon');
+
 
   toggle.addEventListener('click', (event) => {
     event.stopPropagation(); 
     menu.classList.toggle('open');
+    arrowIcon.classList.toggle('arrow-rotated');
   });
 
   // Close menu when clicking outside
