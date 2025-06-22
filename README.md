@@ -11,7 +11,7 @@
 
 ## Beschrijving
 **Drop & Heal** is een ondersteunende website voor mensen die recentelijk een dierbare verloren hebben. Gebruikers worden begeleid door een reeks rouwtaken en reflectie-opdrachten, kunnen hun inzichten delen in een communitypagina en hebben toegang tot een AI-chatbot als digitale steun.  
-🌐 Live website: *[voeg je GitHub Pages of hosting-link hier in]*
+🌐 Live website: *https://dropnheal-pleasurable-ui.onrender.com *
 
 ---
 
