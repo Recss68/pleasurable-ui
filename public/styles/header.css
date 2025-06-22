@@ -327,3 +327,11 @@ header {
     cursor: pointer;
     white-space: nowrap;
 }
+
+  .arrow-icon {
+    transition: transform 0.3s ease;
+  }
+
+  .arrow-rotated {
+    transform: rotate(180deg);
+  }
